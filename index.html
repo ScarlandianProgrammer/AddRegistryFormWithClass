@@ -4,9 +4,34 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Registry Form</title>
+    <title>Add Video Game Form</title>
 </head>
 <body>
-    
+    <h1>Add a Video Game</h1>
+    <div id="validation-errors">
+        <p>Errors go here...</p>
+    </div>
+
+    <form>
+        <label for="game-name">Name of Game</label>
+        <input type="text" id="game-name"><br>
+
+        <label for="game-price">Price of Game</label>
+        <input type="text" id="game-price"><br>
+
+        <label for="game-rating">Rating of Game</label>
+        <select id="game-rating">
+            <option>--Choose a Rating</option>
+            <option>E</option>
+            <option>E10+</option>
+            <option>T</option>
+            <option>M</option>
+            <option>Ao</option>
+            <option>RP</option>
+        </select><br>
+
+        <label for="game-online">Online Only?</label>
+        <input type="checkbox" id="game-online">
+    </form>
 </body>
 </html>
