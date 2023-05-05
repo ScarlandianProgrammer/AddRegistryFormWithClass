@@ -1,5 +1,5 @@
 class VideoGame {
-    title:string;
+    name:string;
     price:number;
     rating:string;
     onlineOnly:boolean;
@@ -7,7 +7,7 @@ class VideoGame {
 
 // putting an onload onto the button
 window.onload = function(){
-    let addBtn = document.querySelector("button");
+    let addBtn = document.getElementById("input-button");
     addBtn.onclick = addGame;
 }
 
@@ -26,7 +26,7 @@ function getGame():VideoGame{
     let game = new VideoGame; // making a new game
 
     // setting the title
-    game.title = (<HTMLInputElement>document.getElementById("game-title")).value; 
+    game.name = (<HTMLInputElement>document.getElementById("game-name")).value; 
     // setting the price
     game.price = parseFloat((<HTMLInputElement>document.getElementById("game-price")).value); 
     // setting the rating    
@@ -39,5 +39,14 @@ function getGame():VideoGame{
 }
 
 function displayGame(game):void{
+    let gameDisplay = document.getElementById("game-history");
 
+    let gameHeader = document.createElement("h2");
+    gameHeader.innerText = game.name;
+
+    let gameDescription = document.createElement("p");
+    gameDescription.innerText = `Name: ${game.name + "\n"}Price: $${game.price.toFixed(2) + "\n"}Rating: ${game.rating + "\n"}Online Only: ${game.onlineOnly}`
+
+    gameDisplay.appendChild(gameHeader);
+    gameDisplay.appendChild(gameDescription);
 }

@@ -11,9 +11,10 @@ html {
     background-color: rgb(50, 75, 200);
 }
 
-body{
-    border: 2px solid black;
+.form-body{
+    border: 1px solid black;
     border-radius: .5em;
+    padding-left: 1em;
     font-family: sans-serif, serif, Arial;
     vertical-align: middle;
     margin: auto;
@@ -25,7 +26,6 @@ body{
 
 
 input[type=text] {
-    size: 1.2em;
     padding: .25em;
     border-radius: 10px;
     background-color: lightgray;
@@ -47,4 +47,15 @@ form{
 
 form > div{
     padding: .5em;
+}
+
+#game-history{
+    padding-left: 1em;
+    font-family: sans-serif, serif, Arial;
+    vertical-align: middle;
+    margin: auto;
+    margin-top: 4em;
+    margin-bottom: 1em;
+    background-color: whitesmoke;
+    box-shadow: 1em 1em 1em 0 rgba(0,0,0,0.75);
 }

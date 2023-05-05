@@ -8,44 +8,51 @@
     <title>Add Video Game Form</title>
 </head>
 <body>
-    <h1>Add a Video Game</h1>
-    <div id="validation-errors">
-        <p>Errors go here...</p>
-    </div>
-
-    <form>
-        <div>
-            <label for="game-name">Name of Game</label>
-            <input type="text" id="game-name"><br>    
+    <main class="form-body">
+        <h1>Add a Video Game</h1>
+        <div id="validation-errors">
+            <p>Errors go here...</p>
         </div>
-
+    
+        <form>
+            <div>
+                <label for="game-name">Name of Game</label>
+                <input type="text" id="game-name"><br>    
+            </div>
+    
+            <div>
+                <label for="game-price">Price of Game</label>
+                <input type="text" id="game-price"><br>    
+            </div>
+    
+            <div>
+                <label for="game-rating">Rating of Game</label>
+                <select id="game-rating">
+                    <option>--Choose a Rating</option>
+                    <option>E</option>
+                    <option>E10+</option>
+                    <option>T</option>
+                    <option>M</option>
+                    <option>A</option>
+                    <option>RP</option>
+                </select><br>    
+            </div>
+    
+            <div>
+                <label for="game-online">Online Only?</label>
+                <input type="checkbox" id="game-online"><br><br>    
+            </div>
+        </form>
         <div>
-            <label for="game-price">Price of Game</label>
-            <input type="text" id="game-price"><br>    
-        </div>
+            <button id="input-button">Input Data</button>
+        </div>    
+    </main>
 
-        <div>
-            <label for="game-rating">Rating of Game</label>
-            <select id="game-rating">
-                <option>--Choose a Rating</option>
-                <option>E</option>
-                <option>E10+</option>
-                <option>T</option>
-                <option>M</option>
-                <option>A</option>
-                <option>RP</option>
-            </select><br>    
-        </div>
+    <footer>
+        <div id="game-history">
 
-        <div>
-            <label for="game-online">Online Only?</label>
-            <input type="checkbox" id="game-online"><br><br>    
         </div>
-    </form>
-    <div>
-        <button>Input Data</button>
-    </div>
-
+    </footer>
     <script src="js/main.js"></script>
 </body>
 </html>
