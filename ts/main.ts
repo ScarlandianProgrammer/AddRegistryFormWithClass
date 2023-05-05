@@ -19,7 +19,27 @@ function addGame(){
 }
 
 function isDataValid():boolean{
-    return true;
+    let name = <HTMLInputElement>document.getElementById("game-name");
+    let price = <HTMLInputElement>document.getElementById("game-price");
+    let rating = <HTMLInputElement>document.getElementById("game-rating");
+    let isOnlineOnly = <HTMLInputElement>document.getElementById("game-online");
+    let errorDisplay = document.getElementById("validation-errors");
+    if (name.value != "" && rating.value != "--Choose a Rating--" && price.value != "" && !isNaN(parseFloat(price.value)) && isOnlineOnly != null){
+        errorDisplay.innerText = "";
+        return true;
+    } else {
+        errorDisplay.innerText = "";
+        if (name.value == "") { // checking if the name is empty
+            displayErrors("Enter a name");
+        } if (rating.value == "--Choose a Rating--"){ // checking if the rating hasn't been chosen
+            displayErrors("Enter a rating");
+        } if (price.value == "" && isNaN(parseFloat(price.value))) { // checking if the price is a number or empty
+            displayErrors("Enter a real price");
+        } if (isOnlineOnly == null) { // checking if the checkbox has malfunctioned
+            displayErrors("You broke the program! Congrats!");
+        }
+        return false;
+    }
 }
 
 function getGame():VideoGame{
@@ -49,4 +69,11 @@ function displayGame(game):void{
 
     gameDisplay.appendChild(gameHeader);
     gameDisplay.appendChild(gameDescription);
+}
+
+function displayErrors(errorString:string){
+    let errorDisplay = document.getElementById("validation-errors");
+    let errorMessage = document.createElement("h4");
+    errorMessage.innerText = errorString;
+    errorDisplay.appendChild(errorMessage);
 }
